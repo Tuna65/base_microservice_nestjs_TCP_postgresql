@@ -1,0 +1,22 @@
+version: '3.5'
+
+services:
+  # db:
+  #   image: postgres:15.0
+  #   container_name: example-db-dev
+  #   ports:
+  #     - '5448:5432'
+  #   environment:
+  #     POSTGRES_USER: admin
+  #     POSTGRES_PASSWORD: Abc123456
+  #     POSTGRES_DB: exampledev
+  
+  server:
+    container_name: example-services-dev
+    build: .
+    image: example-services-dev
+    ports:
+      - '8001:8001'
+    restart: always
+    volumes:
+      - .:/usr/src/app

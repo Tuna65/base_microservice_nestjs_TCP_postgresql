@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+  gateway-dev:
+    container_name: gateway-dev
+    build: .
+    image: gateway-dev
+    ports:
+      - '8003:8001'
+    restart: always
+    volumes:
+      - .:/usr/src/app
+    # volumes:
+    # - ./:/app
+    # - /app/node_modules
+    # - /app/.next
